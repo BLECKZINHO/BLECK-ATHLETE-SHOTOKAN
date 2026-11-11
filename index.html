@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0a0c">
+  <meta name="description" content="BLECK ATHLETE — SHOTOKAN. Biblioteca digital de estudos do Karatê Shotokan tradicional.">
+  <title>BLECK ATHLETE — SHOTOKAN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="BLECK ATHLETE início"><span class="brand-mark">B</span><span>BLECK <b>ATHLETE</b><small>SHOTOKAN KARATE</small></span></a>
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="#inicio" class="active">Início</a><a href="#kihon">Kihon</a><a href="#kata">Kata</a><a href="#kumite">Kumite</a><a href="#conhecimento">Conhecimento</a><a href="#graduacoes">Graduações</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-grid"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span></span> DISCIPLINA • TÉCNICA • TRADIÇÃO</p>
+        <h1>O CAMINHO<br>DO <em>SHOTOKAN.</em></h1>
+        <p class="hero-copy">Conhecimento, prática e evolução. Um espaço de estudo dedicado ao Karatê Shotokan, dos fundamentos à profundidade dos katas.</p>
+        <div class="hero-actions"><a class="btn btn-red" href="#kata">EXPLORAR KATAS <span>↗</span></a><a class="text-link" href="#kihon">COMEÇAR PELO BÁSICO <span>→</span></a></div>
+      </div>
+      <div class="hero-side"><span class="vertical">一撃必殺 · IPPON</span><div class="hero-number">01<span>/06</span></div></div>
+      <div class="hero-bottom"><span>ESTUDO CONTÍNUO</span><span>空手道 · KARATE-DŌ</span><span>BLECK ATHLETE</span></div>
+    </section>
+
+    <section class="intro section-wrap">
+      <div><p class="eyebrow red">NOSSA FILOSOFIA</p><h2>MAIS QUE TÉCNICA.<br><em>UM CAMINHO.</em></h2></div>
+      <p class="intro-copy">O Karatê é construído com repetição consciente, respeito e perseverança. Esta biblioteca organiza conteúdos para apoiar o estudo dentro e fora do dojô — sempre valorizando a orientação do sensei e a tradição.</p>
+    </section>
+
+    <section class="learning section-wrap" id="kihon">
+      <div class="section-heading"><div><p class="eyebrow red">01 / FUNDAMENTOS</p><h2>KIHON<span>.</span></h2></div><p>A base de toda técnica. Estude os princípios que sustentam o movimento.</p></div>
+      <div class="cards three">
+        <article class="study-card"><span class="card-index">01</span><div class="card-symbol">立</div><h3>DACHI</h3><p>Bases, estabilidade, distribuição de peso e posicionamento corporal.</p><a href="#detalhes-kihon" data-topic="bases">ESTUDAR FUNDAMENTOS ↗</a></article>
+        <article class="study-card"><span class="card-index">02</span><div class="card-symbol">受</div><h3>UKE</h3><p>Defesas, trajetória, aplicação e controle de distância.</p><a href="#detalhes-kihon" data-topic="defesas">ESTUDAR FUNDAMENTOS ↗</a></article>
+        <article class="study-card"><span class="card-index">03</span><div class="card-symbol">突</div><h3>TSUKI · UCHI · GERI</h3><p>Socos, golpes e chutes: mecânica, precisão e coordenação.</p><a href="#detalhes-kihon" data-topic="golpes">ESTUDAR FUNDAMENTOS ↗</a></article>
+      </div>
+      <div class="detail-panel" id="detalhes-kihon"><p class="eyebrow red">ÁREA DE ESTUDO</p><h3>Escolha um fundamento</h3><p>Selecione uma categoria acima para abrir seu roteiro de estudo.</p></div>
+    </section>
+
+    <section class="kata-section" id="kata">
+      <div class="section-wrap">
+        <div class="section-heading"><div><p class="eyebrow">02 / BIBLIOTECA TÉCNICA</p><h2>KATA<span>.</span></h2></div><p>Uma jornada pelos 26 katas do Shotokan. Consulte a lista e acompanhe a construção da biblioteca.</p></div>
+        <div class="kata-toolbar"><label for="kata-search">ENCONTRAR KATA</label><input id="kata-search" type="search" placeholder="Digite o nome do kata..."><span id="kata-count">26 KATAS</span></div>
+        <div class="kata-grid" id="kata-grid"></div>
+        <p class="technical-note"><b>Nota técnica:</b> os conteúdos detalhados serão publicados após conferência com referências JKA/Shotokan tradicional. Sequências, contagens, kiai e embusen não serão presumidos quando houver variações entre organizações.</p>
+      </div>
+    </section>
+
+    <section class="learning section-wrap" id="kumite">
+      <div class="section-heading"><div><p class="eyebrow red">03 / PRÁTICA COM PARCEIRO</p><h2>KUMITE<span>.</span></h2></div><p>Formas de treinamento de combate, da prática combinada ao combate livre.</p></div>
+      <div class="cards five">
+        <article class="mini-card"><b>01</b><h3>Gohon Kumite</h3><p>Combate combinado em cinco passos.</p></article>
+        <article class="mini-card"><b>02</b><h3>Sanbon Kumite</h3><p>Combate combinado em três passos.</p></article>
+        <article class="mini-card"><b>03</b><h3>Kihon Ippon</h3><p>Combate básico de um passo.</p></article>
+        <article class="mini-card"><b>04</b><h3>Jiyu Ippon</h3><p>Um passo com maior liberdade.</p></article>
+        <article class="mini-card"><b>05</b><h3>Jiyu Kumite</h3><p>Combate livre sob controle.</p></article>
+      </div>
+    </section>
+
+    <section class="knowledge" id="conhecimento"><div class="section-wrap knowledge-inner"><div><p class="eyebrow">04 / CULTURA E TRADIÇÃO</p><h2>CONHECIMENTO<br><em>É PARTE DO TREINO.</em></h2></div><div class="knowledge-list"><article><span>01</span><div><h3>História do Karatê e do Shotokan</h3><p>Origens, desenvolvimento e princípios da arte.</p></div><b>↗</b></article><article><span>02</span><div><h3>Gichin Funakoshi</h3><p>Vida, ensinamentos e legado do mestre.</p></div><b>↗</b></article><article><span>03</span><div><h3>Budō e Dojokun</h3><p>Ética, caráter, respeito e aperfeiçoamento.</p></div><b>↗</b></article><article><span>04</span><div><h3>Etiqueta no dojô</h3><p>Reigi, comportamento e respeito à prática.</p></div><b>↗</b></article></div></div></section>
+
+    <section class="learning section-wrap" id="graduacoes"><div class="section-heading"><div><p class="eyebrow red">05 / PROGRESSÃO</p><h2>GRADUAÇÕES<span>.</span></h2></div><p>Entenda a progressão técnica e organize sua preparação para exames de faixa.</p></div><div class="grade-callout"><div class="grade-kanji">段<br>級</div><div><h3>EVOLUÇÃO COM PROPÓSITO.</h3><p>Faixas, níveis, requisitos técnicos e preparação para exames serão organizados respeitando os critérios da entidade ou associação responsável por cada graduação.</p></div></div></section>
+  </main>
+
+  <footer><a class="brand" href="#inicio"><span class="brand-mark">B</span><span>BLECK <b>ATHLETE</b><small>SHOTOKAN KARATE</small></span></a><p>DISCIPLINA NO TREINO. RESPEITO NO CAMINHO.</p><span>© <span id="year"></span> BLECK ATHLETE</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
