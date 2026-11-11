@@ -3,6 +3,10 @@ const kataGrid = document.querySelector("#kata-grid");
 const search = document.querySelector("#kata-search");
 const kataCount = document.querySelector("#kata-count");
 
+document.body.insertAdjacentHTML("beforeend", '<dialog id="kata-dialog"><div class="kata-dialog-head"><button type="button" id="kata-dialog-close">FECHAR ✕</button></div><div id="kata-dialog-content"></div></dialog>');
+document.querySelector("#kata-dialog-close").addEventListener("click", () => document.querySelector("#kata-dialog").close());
+document.querySelector("#kata-dialog").addEventListener("click", event => { if (event.target.id === "kata-dialog") event.target.close(); });
+
 function renderKatas(term = "") {
   const filtered = kataNames.filter(name => name.toLowerCase().includes(term.toLowerCase()));
   kataGrid.innerHTML = filtered.map(name => {
