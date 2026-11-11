@@ -62,6 +62,48 @@ function openKata(name) {
       <div class="kata-source"><b>Referência técnica:</b> Japan Karate Association — <a href="https://www.jka.or.jp/wp/wp-content/uploads/2017/04/tech_manual_instructor.pdf" target="_blank" rel="noopener">Technical Manual for the Instructor</a>, seção “Elements to Consider & Movements of KATA”, página 15 do documento. A JKA também apresenta seus livros oficiais de kata na <a href="https://www.jka.or.jp/en/jka-learning-material/" target="_blank" rel="noopener">página de materiais de aprendizagem</a>.</div>
       <p class="technical-note">Material de apoio ao estudo. A execução e a sequência devem ser conferidas com o sensei e com a edição de referência utilizada pela sua associação.</p>
     `;
+  } else if (name === "Jion") {
+    content.innerHTML = `
+      <p class="eyebrow red">ESTUDO DE KATA · JKA / SHOTOKAN</p>
+      <h2>JION<span>.</span></h2>
+      <p class="kata-subtitle">慈恩 · Jion</p>
+      <div class="kata-facts">
+        <div><small>CONTAGEM NO MANUAL TÉCNICO JKA</small><strong>47 movimentos</strong></div>
+        <div><small>KIAI INDICADOS NAS REFERÊNCIAS CONSULTADAS</small><strong>17º e 47º movimentos</strong></div>
+      </div>
+      <h3>01 — Características do kata</h3>
+      <p>O manual técnico da Japan Karate Association registra o Jion com 47 movimentos. Entre os pontos característicos, destaca mudanças de direção e deslocamentos em que os dois pés deslizam juntos. A execução deve preservar postura, equilíbrio, precisão e continuidade, sem transformar os movimentos em gestos apressados.</p>
+      <h3>02 — Pontos técnicos para observar</h3>
+      <ul>
+        <li>Manter o tronco ereto e as bases estáveis durante as mudanças de direção.</li>
+        <li>Observar o deslocamento dos pés que deslizam juntos, sem saltar ou perder contato desnecessariamente com o solo.</li>
+        <li>Coordenar a rotação do quadril com as técnicas de braço e com a transferência de peso.</li>
+        <li>Distinguir os momentos de expansão, contração, força e mudança de velocidade.</li>
+        <li>Conferir o alinhamento das bases e o retorno ao ponto inicial do embusen.</li>
+      </ul>
+      <h3>03 — Sequência movimento por movimento</h3>
+      <p class="pending-note">A contagem total de 47 movimentos está registrada no manual técnico da JKA. A descrição individual de cada movimento ainda precisa ser conferida com o material oficial de kata, incluindo a nomenclatura das técnicas, as bases e as direções. Não publicaremos uma sequência reconstruída de memória.</p>
+      <h3>04 — Kiai</h3>
+      <p>As referências de organizações ligadas à JKA consultadas indicam Kiai nos movimentos 17 e 47. Como a indicação não aparece na tabela-resumo do manual técnico geral, ela será tratada como referência corroborada, e não como citação direta desse manual. Confirme a execução com o instrutor e com o material oficial adotado no seu dojo.</p>
+      <h3>05 — Embusen</h3>
+      <p class="pending-note">O desenho do embusen será incluído depois da conferência da sequência e das direções, para que cada deslocamento corresponda corretamente à execução JKA.</p>
+      <h3>06 — Bunkai e aplicação</h3>
+      <p>O bunkai deve ser estudado a partir das técnicas realmente presentes na sequência e com orientação do sensei. As aplicações ilustrativas serão preparadas após a validação movimento por movimento; esta ficha não atribui aplicações específicas sem essa conferência.</p>
+      <h3>07 — Roteiro de treino</h3>
+      <ol>
+        <li>Revise a sequência com o instrutor antes de treinar em velocidade.</li>
+        <li>Pratique as mudanças de direção isoladamente, cuidando da postura e do equilíbrio.</li>
+        <li>Treine os deslocamentos com os pés deslizando juntos, mantendo controle da distância.</li>
+        <li>Una os trechos gradualmente, preservando ritmo, respiração e precisão técnica.</li>
+        <li>Confira o embusen e o retorno ao ponto inicial com o sensei.</li>
+      </ol>
+      <div class="kata-source"><b>Referências consultadas:</b><br>
+        Japan Karate Association — <a href="https://www.jka.or.jp/wp/wp-content/uploads/2017/04/tech_manual_instructor.pdf" target="_blank" rel="noopener">Technical Manual for the Instructor</a>, seção “Elements to Consider & Movements of KATA”, página 15 do documento (contagem e características do Jion).<br>
+        JKA — <a href="https://www.jka.or.jp/en/books-and-videos/" target="_blank" rel="noopener">Books and Videos</a> e <a href="https://www.jka.or.jp/en/jka-learning-material/" target="_blank" rel="noopener">JKA Learning Materials</a> (materiais oficiais de estudo).<br>
+        Indicação dos Kiai: referências de organizações JKA consultadas em <a href="https://jkachile.com/kata/" target="_blank" rel="noopener">JKA Chile</a> e <a href="https://asktc.org/katas" target="_blank" rel="noopener">JKA Canarias</a>.
+      </div>
+      <p class="technical-note">Material de apoio ao estudo. A referência principal é a JKA; confirme a execução e eventuais orientações específicas com o sensei e com a edição de kata utilizada pela sua associação.</p>
+    `;
   } else {
     content.innerHTML = `
       <p class="eyebrow red">BIBLIOTECA TÉCNICA · JKA / SHOTOKAN</p>
