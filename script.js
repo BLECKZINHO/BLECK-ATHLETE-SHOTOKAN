@@ -54,8 +54,8 @@ function renderKatas(term = "") {
   const filtered = kataNames.filter(name => name.toLowerCase().includes(term.toLowerCase()));
   kataGrid.innerHTML = filtered.map(name => {
     const index = kataNames.indexOf(name) + 1;
-    const available = Boolean(kataProfiles[name]);
-    return '<button class="kata-item" type="button" data-kata="' + name + '" aria-label="Abrir estudo de ' + name + '"><b>' + name + '</b><span>' + (available ? 'ESTUDO INICIAL DISPONÍVEL' : 'CONTEÚDO EM PREPARAÇÃO') + '</span><i>' + String(index).padStart(2,"0") + ' ↗</i></button>';
+    const available = name === "Empi" || name === "Jion";
+    return '<button class="kata-item" type="button" data-kata="' + name + '" aria-label="Abrir estudo de ' + name + '"><b>' + name + '</b><span>' + (available ? 'ESTUDO INICIAL DISPONÍVEL' : 'FICHA BASE EM REVISÃO') + '</span><i>' + String(index).padStart(2,"0") + ' ↗</i></button>';
   }).join("");
   kataCount.textContent = filtered.length + (filtered.length === 1 ? " KATA" : " KATAS");
 }
@@ -85,7 +85,7 @@ function openKata(name) {
       </div>
       <h3>01 — Características do kata</h3>
       <p>O manual técnico da JKA descreve o Enpi por movimentos que lembram o voo de uma andorinha, com mudanças rápidas de direção e de altura. Destaca a leveza, a agilidade, os socos ascendentes (Age-zuki) e os golpes executados com salto para a frente.</p>
-      <h3>02 — O que observar durante a prática</h3>
+      <h3>02 — Pontos técnicos para observar</h3>
       <ul>
         <li>Transições rápidas sem perder equilíbrio ou postura.</li>
         <li>Mudanças de direção coordenadas com o giro do quadril e o pé de apoio.</li>
