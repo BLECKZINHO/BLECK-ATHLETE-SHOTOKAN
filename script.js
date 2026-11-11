@@ -1,32 +1,32 @@
 const kataNames = ["Heian Shodan","Heian Nidan","Heian Sandan","Heian Yondan","Heian Godan","Tekki Shodan","Tekki Nidan","Tekki Sandan","Bassai Dai","Bassai Sho","Kanku Dai","Kanku Sho","Jion","Jitte","Ji'in","Empi","Hangetsu","Gankaku","Nijushiho","Chinte","Unsu","Sochin","Meikyo","Wankan","Gojushiho Dai","Gojushiho Sho"];
 
 const kataProfiles = {
-  "Heian Shodan": { moves: 21, kiai: "9º e 17º", feature: "Primeiro kata Heian: fundamentos de defesa pessoal, coordenação e bases." },
-  "Heian Nidan": { moves: 26, kiai: "11º e 26º", feature: "Segundo kata Heian; amplia as mudanças de direção e combinações técnicas." },
-  "Heian Sandan": { moves: 20, kiai: "10º e 20º", feature: "Terceiro kata Heian; atenção às transições, estabilidade e coordenação." },
-  "Heian Yondan": { moves: 27, kiai: "13º e 25º", feature: "Quarto kata Heian; combinações e mudanças de nível exigem controle corporal." },
-  "Heian Godan": { moves: 23, kiai: "12º e 19º", feature: "Quinto kata Heian; reúne mudanças de direção, ritmo e técnicas variadas." },
-  "Tekki Shodan": { moves: 29, kiai: "15º e 29º", feature: "Kata da série Tekki, com ênfase em Kiba-dachi e deslocamentos laterais." },
-  "Tekki Nidan": { moves: 24, kiai: "16º e 24º", feature: "Segundo kata Tekki; estabilidade em Kiba-dachi e trabalho de quadril." },
-  "Tekki Sandan": { moves: 36, kiai: "16º e 36º", feature: "Terceiro kata Tekki; continuidade e precisão na base Kiba-dachi." },
-  "Bassai Dai": { moves: 42, kiai: "19º e 42º", feature: "Penetrar a fortaleza: potência, espírito e transformação de posições desfavoráveis." },
-  "Bassai Sho": { moves: 27, kiai: "17º e 22º", feature: "Defesa contra ataque de bastão em nível alto, com bloqueio e contra-ataque." },
-  "Kanku Dai": { moves: 65, kiai: "15º e 65º", feature: "Defesa em várias direções, com saltos, giros e contrastes de ritmo e potência." },
-  "Kanku Sho": { moves: 48, kiai: "6º e 48º", feature: "Ênfase em defesas e chutes de nível médio (Chudan)." },
-  "Jion": { moves: 47, kiai: "17º e 47º", feature: "Mudanças de direção e deslocamentos com os dois pés deslizando juntos." },
-  "Jitte": { moves: 24, kiai: "13º e 24º", feature: "Defesa contra bastão (Bo), com potência gerada pelo quadril." },
-  "Ji'in": { moves: 35, kiai: "11º e 35º", feature: "Características específicas em conferência com material técnico da associação." },
-  "Empi": { moves: 37, kiai: "15º e 36º", feature: "Movimentos que lembram o voo da andorinha, com leveza e mudanças rápidas de direção e altura." },
-  "Hangetsu": { moves: 41, kiai: "11º e 40º", feature: "Sincronização entre mãos, pés e respiração; deslocamento em meia-lua." },
-  "Gankaku": { moves: 42, kiai: "28º e 42º", feature: "A imagem da garça sobre a rocha: equilíbrio em uma perna, Yoko-geri e Uraken." },
-  "Nijushiho": { moves: 34, kiai: "18º e 33º", feature: "Fluidez e flexibilidade, com mudanças de ritmo e técnicas específicas em Kiba-dachi." },
-  "Chinte": { moves: 32, kiai: "28º e 32º", feature: "Mudanças de base e uso característico do soco vertical (Tate-zuki)." },
-  "Unsu": { moves: 48, kiai: "36º e 48º", feature: "Agilidade e coordenação complexa entre técnicas de mãos e pés." },
-  "Sochin": { moves: 41, kiai: "30º e 41º", feature: "Firmeza de Fudo-dachi e movimentos potentes, com estabilidade." },
-  "Meikyo": { moves: 33, kiai: "32º", feature: "Embusen em forma de espelho e salto triangular." },
-  "Wankan": { moves: 24, kiai: "24º", feature: "Deslocamentos leves e deslizantes dos pés (Suri-ashi)." },
-  "Gojushiho Dai": { moves: 67, kiai: "59º e 66º", feature: "Defesas de mão aberta, mudanças em Neko-ashi-dachi e Nukite." },
-  "Gojushiho Sho": { moves: 65, kiai: "57º e 64º", feature: "Defesas de mão aberta, ataques Nukite e defesa contra bastão." }
+  "Heian Shodan": { moves: 21, kiai: "9º e 17º", feature: "Primeiro kata Heian: fundamentos de defesa, deslocamento em linhas definidas e coordenação entre bloqueios e contra-ataques.", focus: "Zenkutsu-dachi, Gedan-barai, Oi-zuki, mudanças de direção e estabilidade nas transições.", practice: "Isole as sequências de Gedan-barai e Oi-zuki; confira o comprimento das bases e a rotação do quadril." },
+  "Heian Nidan": { moves: 26, kiai: "11º e 26º", feature: "Segundo kata Heian: amplia o repertório com técnicas de nível alto e médio, chutes e mudanças de direção.", focus: "Controle dos níveis Jodan e Chudan, equilíbrio nos chutes e coordenação das combinações.", practice: "Treine os chutes isoladamente, recupere a base com controle e depois conecte as combinações sem acelerar." },
+  "Heian Sandan": { moves: 20, kiai: "10º e 20º", feature: "Terceiro kata Heian: exige atenção às transições, às técnicas de braço e à estabilidade das bases.", focus: "Kiba-dachi, deslocamentos laterais, coordenação dos braços e manutenção do centro de gravidade.", practice: "Pratique os deslocamentos laterais em Kiba-dachi mantendo a altura constante e os joelhos alinhados." },
+  "Heian Yondan": { moves: 27, kiai: "13º e 25º", feature: "Quarto kata Heian: reúne combinações variadas, mudanças de nível e técnicas que exigem coordenação.", focus: "Ritmo, equilíbrio nas técnicas de perna, transições entre bases e precisão das defesas.", practice: "Separe as combinações com chutes e pratique a recuperação da perna antes de avançar para o trecho seguinte." },
+  "Heian Godan": { moves: 23, kiai: "12º e 19º", feature: "Quinto kata Heian: combina mudanças de direção, técnicas variadas e transições que pedem controle corporal.", focus: "Mudanças de altura, equilíbrio, coordenação e aterrissagem controlada nas ações com salto.", practice: "Treine primeiro as mudanças de direção e o salto em baixa velocidade, priorizando equilíbrio e finalização estável." },
+  "Tekki Shodan": { moves: 29, kiai: "15º e 29º", feature: "Primeiro kata Tekki, originalmente associado à série Naihanchi, com deslocamento predominantemente lateral.", focus: "Kiba-dachi, pressão das pernas para dentro, quadril estável e deslocamentos curtos sem oscilar o tronco.", practice: "Pratique a sequência lateral em Kiba-dachi sem elevar o centro de gravidade nem cruzar os pés fora da técnica." },
+  "Tekki Nidan": { moves: 24, kiai: "16º e 24º", feature: "Segundo kata Tekki: mantém o trabalho lateral característico da série e amplia as combinações técnicas.", focus: "Estabilidade em Kiba-dachi, coordenação de mãos e quadril e precisão dos movimentos curtos.", practice: "Divida a sequência em blocos curtos e confira a posição dos pés e a estabilidade do tronco a cada transição." },
+  "Tekki Sandan": { moves: 36, kiai: "16º e 36º", feature: "Terceiro kata Tekki: continuidade e precisão na base Kiba-dachi, com coordenação refinada das ações.", focus: "Manter a base lateral, coordenar ações simultâneas e evitar deslocamentos involuntários do tronco.", practice: "Treine lentamente as combinações de braços mantendo a base imóvel e o peso distribuído de forma equilibrada." },
+  "Bassai Dai": { moves: 42, kiai: "19º e 42º", feature: "O nome é associado a penetrar ou romper uma fortaleza; a JKA destaca espírito, potência e transformação de posições desfavoráveis.", focus: "Potência com controle, mudanças de direção e transição de defesas duplas para posições vantajosas.", practice: "Trabalhe as mudanças de direção e as defesas em dupla ação sem perder a postura nem antecipar o movimento seguinte." },
+  "Bassai Sho": { moves: 27, kiai: "17º e 22º", feature: "Forma menor da família Bassai, com características técnicas próprias; a interpretação de aplicações deve seguir a sequência JKA.", focus: "Precisão das técnicas de mão aberta, coordenação dos braços e estabilidade nas mudanças de direção.", practice: "Estude cada combinação lentamente e confira com o instrutor a trajetória e a aplicação das técnicas específicas." },
+  "Kanku Dai": { moves: 65, kiai: "15º e 65º", feature: "A JKA destaca defesa em oito direções, muitas mudanças de direção, saltos, descidas e contrastes de velocidade e potência.", focus: "Mudanças de direção, controle dos níveis, expansão e contração corporal e transições entre ações lentas e rápidas.", practice: "Divida o kata em blocos, marcando as mudanças de nível e direção antes de trabalhar a continuidade." },
+  "Kanku Sho": { moves: 48, kiai: "6º e 48º", feature: "Forma menor da família Kanku; deve ser estudada preservando suas diferenças de sequência e ritmo em relação ao Kanku Dai.", focus: "Precisão nas mudanças de direção, coordenação das técnicas e controle dos níveis.", practice: "Compare apenas os princípios gerais com Kanku Dai; pratique a sequência própria de Kanku Sho sem misturar trechos." },
+  "Jion": { moves: 47, kiai: "17º e 47º", feature: "Mudanças de direção e deslocamentos com os dois pés deslizando juntos, conforme os pontos característicos destacados no manual JKA.", focus: "Postura, equilíbrio, deslocamento Yori-ashi e coordenação do quadril.", practice: "Pratique as mudanças de direção e os deslocamentos com os pés deslizando juntos, sem saltar." },
+  "Jitte": { moves: 24, kiai: "13º e 24º", feature: "A JKA destaca a defesa contra bastão (Bo), bloqueios fortes e potência gerada pelo quadril.", focus: "Postura firme, uso coordenado do quadril e trajetória precisa das técnicas de defesa.", practice: "Estude as ações de defesa lentamente e com orientação do sensei; não use bastões ou parceiros sem supervisão." },
+  "Ji'in": { moves: 35, kiai: "11º e 35º", feature: "Kata da família tradicional JKA, relacionado ao grupo de formas de nome budista; sua sequência exige estudo próprio.", focus: "Precisão das bases, coordenação das técnicas e continuidade entre mudanças de direção.", practice: "Estude por pequenos segmentos, conferindo cada transição com a demonstração oficial adotada no dojo." },
+  "Empi": { moves: 37, kiai: "15º e 36º", feature: "Movimentos que lembram o voo da andorinha, com leveza e mudanças rápidas de direção e altura.", focus: "Age-zuki, mudanças de direção, variação de altura e controle do salto.", practice: "Treine as mudanças de direção e o salto separadamente, com aterrissagem silenciosa e equilibrada." },
+  "Hangetsu": { moves: 41, kiai: "11º e 40º", feature: "A JKA destaca a sincronização entre mãos, pés e respiração, além do desenho de meia-lua do pé ao avançar.", focus: "Hangetsu-dachi, respiração, controle da tensão e deslocamento semicircular do pé.", practice: "Pratique lentamente a respiração e o deslocamento do pé em meia-lua, sem exagerar a tensão muscular." },
+  "Gankaku": { moves: 42, kiai: "28º e 42º", feature: "A JKA associa o kata à imagem da garça sobre a rocha e destaca equilíbrio em uma perna, chute lateral e golpe de dorso da mão.", focus: "Equilíbrio unilateral, alinhamento do joelho de apoio e controle do Yoko-geri e Uraken.", practice: "Treine as posições de equilíbrio com apoio próximo se necessário; depois integre o chute sem perder o eixo." },
+  "Nijushiho": { moves: 34, kiai: "18º e 33º", feature: "Kata conhecido como '24 passos'; sua execução combina fluidez, controle de ritmo e transições técnicas.", focus: "Mudanças de ritmo, precisão das mãos e coordenação das transições entre bases.", practice: "Marque as pausas e acelerações da sequência; trabalhe a fluidez sem perder a definição de cada técnica." },
+  "Chinte": { moves: 32, kiai: "28º e 32º", feature: "Kata de técnicas de mão características; o nome é frequentemente interpretado como mãos raras ou incomuns.", focus: "Precisão das mãos, controle das distâncias e transições entre bases.", practice: "Estude lentamente as técnicas menos usuais e peça ao sensei para conferir a forma das mãos e a distância." },
+  "Unsu": { moves: 48, kiai: "36º e 48º", feature: "Kata avançado de grande exigência coordenativa; inclui ações de mãos e pés e mudanças dinâmicas de nível.", focus: "Coordenação, mobilidade, controle dos giros e segurança nas ações acrobáticas.", practice: "Desenvolva mobilidade e equilíbrio separadamente; não tente saltos ou quedas sem preparação e supervisão." },
+  "Sochin": { moves: 41, kiai: "30º e 41º", feature: "Kata associado à firmeza e estabilidade; destaca-se pelo uso de Fudo-dachi e pela sensação de potência controlada.", focus: "Fudo-dachi, estabilidade do centro, transições fortes e controle da tensão corporal.", practice: "Mantenha a base estável durante as transições e trabalhe a alternância entre firmeza e relaxamento." },
+  "Meikyo": { moves: 33, kiai: "32º", feature: "Nome associado ao espelho claro; a tradição do kata inclui um salto característico que exige controle técnico.", focus: "Precisão das bases, clareza das transições e preparação equilibrada para o salto.", practice: "Treine a preparação e a aterrissagem do salto separadamente, priorizando alinhamento e segurança." },
+  "Wankan": { moves: 24, kiai: "24º", feature: "Kata curto dentro do repertório JKA, com deslocamentos leves e transições que exigem precisão.", focus: "Suri-ashi, controle da distância e continuidade sem movimentos supérfluos.", practice: "Pratique os deslocamentos deslizantes com passos curtos e silenciosos, mantendo o tronco estável." },
+  "Gojushiho Dai": { moves: 67, kiai: "59º e 66º", feature: "Forma maior da família Gojushiho, conhecida como 54 passos; inclui técnicas de mão aberta e transições avançadas.", focus: "Precisão das mãos abertas, controle de Neko-ashi-dachi e coordenação das técnicas de Nukite.", practice: "Trabalhe as posições de gato e as técnicas de mão aberta em baixa velocidade, conferindo alinhamento e distância." },
+  "Gojushiho Sho": { moves: 65, kiai: "57º e 64º", feature: "Forma menor da família Gojushiho, com sequência própria e técnicas avançadas de mão aberta.", focus: "Controle de Neko-ashi-dachi, precisão de Nukite e continuidade das mudanças de direção.", practice: "Estude os trechos técnicos em separado e confirme com o sensei as diferenças específicas em relação ao Dai." }
 };
 
 const kataGrid = document.querySelector("#kata-grid");
@@ -176,39 +176,42 @@ function openKata(name) {
     content.innerHTML = `
       <p class="eyebrow red">ESTUDO DE KATA · JKA / SHOTOKAN</p>
       <h2>${name.toUpperCase()}<span>.</span></h2>
-      <p class="kata-subtitle">Ficha técnica de estudo</p>
+      <p class="kata-subtitle">Ficha técnica de estudo · JKA / Shotokan</p>
       <div class="kata-facts">
-        <div><small>CONTAGEM DE REFERÊNCIA</small><strong>${profile ? profile.moves + " movimentos" : "Em conferência"}</strong></div>
-        <div><small>KIAI — REFERÊNCIA JKA CHILE</small><strong>${profile ? profile.kiai : "Em conferência"}</strong></div>
+        <div><small>CONTAGEM DE REFERÊNCIA JKA</small><strong>${profile ? profile.moves + " movimentos" : "Em conferência"}</strong></div>
+        <div><small>KIAI — REFERÊNCIA JKA ESPANHA</small><strong>${profile ? profile.kiai : "Em conferência"}</strong></div>
       </div>
       <h3>01 — Características do kata</h3>
       <p>${profile ? profile.feature : "As características específicas serão publicadas após conferência técnica."}</p>
       <h3>02 — Pontos técnicos para observar</h3>
+      <p>${profile ? profile.focus : "Postura, alinhamento das bases, equilíbrio, coordenação, ritmo e precisão devem ser observados com o instrutor."}</p>
       <ul>
-        <li>Postura, alinhamento das bases e equilíbrio durante cada transição.</li>
-        <li>Coordenação entre quadril, membros superiores e deslocamento dos pés.</li>
-        <li>Ritmo, respiração, níveis de força e mudanças de velocidade.</li>
-        <li>Direção do olhar e precisão na execução das técnicas.</li>
+        <li>Manter o tronco alinhado e o centro de gravidade controlado durante as transições.</li>
+        <li>Coordenar quadril, membros superiores e deslocamento dos pés.</li>
+        <li>Respeitar o ritmo, a respiração e os níveis de força próprios do kata.</li>
       </ul>
       <h3>03 — Sequência movimento por movimento</h3>
-      <p class="pending-note">A sequência detalhada ainda será conferida com o volume oficial JKA correspondente. Não publicaremos técnicas, lados ou direções por suposição.</p>
+      <p class="pending-note">A contagem total é apresentada como referência. A listagem individual de cada kyodo — técnica, lado, base e direção — ainda precisa ser confrontada com o volume oficial JKA correspondente. Não publicaremos uma sequência reconstruída por suposição.</p>
       <h3>04 — Kiai</h3>
-      <p>Os pontos exibidos são uma referência publicada pela JKA Chile e podem variar conforme a convenção de contagem. Confirme com seu sensei e com o material adotado pela associação.</p>
+      <p>Os pontos indicados seguem a tabela de referência publicada pela JKA Espanha. A contagem pode variar conforme a convenção de cada edição e associação; confirme com o sensei e com o material adotado no dojo.</p>
       <h3>05 — Embusen</h3>
-      <p class="pending-note">O desenho será incluído após a validação da sequência e das direções, garantindo o retorno correto ao ponto inicial.</p>
-      <h3>06 — Bunkai</h3>
-      <p class="pending-note">As aplicações serão desenvolvidas a partir das técnicas verificadas na sequência oficial, sem atribuir significados não confirmados.</p>
+      <p class="pending-note">O desenho será incluído após a validação da sequência e das direções, garantindo que cada deslocamento corresponda à execução JKA e que o kata retorne ao ponto inicial.</p>
+      <h3>06 — Bunkai e aplicação</h3>
+      <p class="pending-note">As aplicações serão desenvolvidas a partir das técnicas verificadas na sequência oficial. A interpretação deve considerar distância, tempo, postura e orientação do instrutor; não serão atribuídas aplicações sem validação.</p>
       <h3>07 — Roteiro de treino</h3>
       <ol>
         <li>Estude a sequência com o instrutor e identifique os trechos mais difíceis.</li>
         <li>Pratique lentamente, conferindo bases, mãos, pés e direção do olhar.</li>
-        <li>Treine as transições e mudanças de direção sem perder equilíbrio.</li>
+        <li>${profile ? profile.practice : "Treine as transições e mudanças de direção sem perder equilíbrio."}</li>
         <li>Una os trechos, trabalhando respiração, ritmo e precisão.</li>
         <li>Revise o embusen e o retorno ao ponto inicial com seu sensei.</li>
       </ol>
-      <div class="kata-source"><b>Materiais oficiais:</b> <a href="https://www.jka.or.jp/en/jka-learning-material/" target="_blank" rel="noopener">JKA Learning Materials</a> · <a href="https://www.jka.or.jp/en/books-and-videos/" target="_blank" rel="noopener">JKA Books and Videos</a>.<br>
-      <b>Contagens e Kiai:</b> <a href="https://jkachile.com/kata/" target="_blank" rel="noopener">JKA Chile — tabela de 26 katas</a>. Os dados são referências de estudo e devem ser comparados com a edição adotada no dojo.</div>
-      <p class="technical-note">Material de apoio. A sequência, a execução e as correções técnicas devem ser confirmadas com o sensei e com o material oficial utilizado pela associação.</p>
+      <div class="kata-source"><b>Referências técnicas:</b><br>
+        Japan Karate Association — <a href="https://www.jka.or.jp/wp/wp-content/uploads/2017/04/tech_manual_instructor.pdf" target="_blank" rel="noopener">Technical Manual for the Instructor</a>, especialmente a seção “Elements to Consider & Movements of KATA”.<br>
+        JKA — <a href="https://www.jka.or.jp/en/books-and-videos/" target="_blank" rel="noopener">Karate-Do Kata, volumes 1–4</a>, referência oficial para a sequência e os diagramas.<br>
+        JKA Espanha — <a href="https://jkaspain.com/kata/" target="_blank" rel="noopener">Katas JKA: contagens e Kiai</a>, referência complementar para a tabela de movimentos e Kiai.
+      </div>
+      <p class="technical-note">Material de apoio ao estudo. A referência principal é a JKA; confirme a execução, a contagem e eventuais orientações específicas com o sensei e com a edição de kata utilizada pela sua associação.</p>
     `;
   }
   kataDialog.hidden = false;
