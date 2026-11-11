@@ -29,6 +29,19 @@ const kataProfiles = {
   "Gojushiho Sho": { moves: 65, kiai: "57º e 64º", feature: "Forma menor da família Gojushiho, com sequência própria e técnicas avançadas de mão aberta.", focus: "Controle de Neko-ashi-dachi, precisão de Nukite e continuidade das mudanças de direção.", practice: "Estude os trechos técnicos em separado e confirme com o sensei as diferenças específicas em relação ao Dai." }
 };
 
+// Vídeos da série All Kata of Karate, produzida pelo Bureau of Technique da JKA.
+// A Yale Shotokan Karate informa que estes clipes foram cedidos pela JKA para fins educacionais.
+const jkaVideoIds = {
+  "Heian Shodan": "Rgg8vF_l8ZI",
+  "Heian Nidan": "VApwsBSx7mg",
+  "Heian Sandan": "1DDppu5CRrc",
+  "Heian Yondan": "AambQc8F0ZU",
+  "Heian Godan": "ZagZ6egeRbw",
+  "Tekki Shodan": "iW0s6l-Gt-g",
+  "Bassai Dai": "5tbW304p4r4",
+  "Gankaku": "C0lPJD5eIMs"
+};
+
 const kataGrid = document.querySelector("#kata-grid");
 const search = document.querySelector("#kata-search");
 const kataCount = document.querySelector("#kata-count");
@@ -54,7 +67,7 @@ function renderKatas(term = "") {
   const filtered = kataNames.filter(name => name.toLowerCase().includes(term.toLowerCase()));
   kataGrid.innerHTML = filtered.map(name => {
     const index = kataNames.indexOf(name) + 1;
-    const available = name === "Empi" || name === "Jion";
+    const available = name === "Empi" || name === "Jion" || Boolean(jkaVideoIds[name]);
     return '<button class="kata-item" type="button" data-kata="' + name + '" aria-label="Abrir estudo de ' + name + '"><b>' + name + '</b><span>' + (available ? 'ESTUDO INICIAL DISPONÍVEL' : 'FICHA BASE EM REVISÃO') + '</span><i>' + String(index).padStart(2,"0") + ' ↗</i></button>';
   }).join("");
   kataCount.textContent = filtered.length + (filtered.length === 1 ? " KATA" : " KATAS");
@@ -177,7 +190,13 @@ function openKata(name) {
       <p class="eyebrow red">ESTUDO DE KATA · JKA / SHOTOKAN</p>
       <h2>${name.toUpperCase()}<span>.</span></h2>
       <p class="kata-subtitle">Ficha técnica de estudo · JKA / Shotokan</p>
-      <div class="kata-facts">
+            ${jkaVideoIds[name] ? (
+              '<h3>ASSISTA À REFERÊNCIA JKA</h3>' +
+              '<div class="kata-video"><iframe src="https://www.youtube-nocookie.com/embed/' + jkaVideoIds[name] + '" title="' + name + ' — demonstração da série de kata produzida pela JKA" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>' +
+              '<p class="video-caption">Vídeo da série “All Kata of Karate”, produzida pelo Bureau of Technique da JKA e disponibilizada para fins educacionais pela Yale Shotokan Karate. Use como referência visual e confirme os detalhes com seu sensei.</p>' +
+              '<p class="kata-source"><a href="https://karate.sites.yale.edu/kata-videos" target="_blank" rel="noopener">Fonte do vídeo: Yale Shotokan Karate — clipes cedidos pela JKA</a></p>'
+            ) : ""}
+            <div class="kata-facts">
         <div><small>CONTAGEM DE REFERÊNCIA JKA</small><strong>${profile ? profile.moves + " movimentos" : "Em conferência"}</strong></div>
         <div><small>KIAI — REFERÊNCIA JKA ESPANHA</small><strong>${profile ? profile.kiai : "Em conferência"}</strong></div>
       </div>
