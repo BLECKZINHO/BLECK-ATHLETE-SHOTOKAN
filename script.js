@@ -67,6 +67,17 @@ function openKata(name) {
       <p class="eyebrow red">ESTUDO DE KATA · JKA / SHOTOKAN</p>
       <h2>JION<span>.</span></h2>
       <p class="kata-subtitle">慈恩 · Jion</p>
+      <h3>ASSISTA AO KATA</h3>
+      <div class="kata-video">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/nlV1ACW3LRg"
+          title="Jion Kata — demonstração filmada em treinamento e exame JKA"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <p class="video-caption">Referência em vídeo: Jion apresentado em material identificado como treinamento e exame na sede da JKA. O vídeo está hospedado por um canal independente, não pelo canal oficial da JKA.</p>
       <div class="kata-facts">
         <div><small>CONTAGEM NO MANUAL TÉCNICO JKA</small><strong>47 movimentos</strong></div>
         <div><small>KIAI INDICADOS NAS REFERÊNCIAS CONSULTADAS</small><strong>17º e 47º movimentos</strong></div>
