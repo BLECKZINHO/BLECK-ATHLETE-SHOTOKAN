@@ -42,6 +42,31 @@ const jkaVideoLinks = {
   "Gankaku": "https://vimeo.com/ondemand/karatedokatavol3english/659857130"
 };
 
+const kataSequences = {
+  "Heian Shodan": [
+    ["Gedan-barai", "Zenkutsu-dachi"],
+    ["Oi-zuki", "Zenkutsu-dachi"],
+    ["Gedan-barai", "Zenkutsu-dachi"],
+    ["Tetsui-uchi (Kentsui-tate-mawashi-uchi)", "Zenkutsu-dachi"],
+    ["Oi-zuki", "Zenkutsu-dachi"],
+    ["Gedan-barai", "Zenkutsu-dachi"],
+    ["Age-uke", "Zenkutsu-dachi"],
+    ["Age-uke", "Zenkutsu-dachi"],
+    ["Age-uke · KIAI", "Zenkutsu-dachi"],
+    ["Gedan-barai", "Zenkutsu-dachi"],
+    ["Oi-zuki", "Zenkutsu-dachi"],
+    ["Gedan-barai", "Zenkutsu-dachi"],
+    ["Oi-zuki", "Zenkutsu-dachi"],
+    ["Gedan-barai", "Zenkutsu-dachi"],
+    ["Oi-zuki", "Zenkutsu-dachi"],
+    ["Oi-zuki", "Zenkutsu-dachi"],
+    ["Oi-zuki · KIAI", "Zenkutsu-dachi"],
+    ["Shuto-uke", "Kokutsu-dachi"],
+    ["Shuto-uke", "Kokutsu-dachi"],
+    ["Shuto-uke", "Kokutsu-dachi"],
+    ["Shuto-uke", "Kokutsu-dachi"]
+  ]
+};
 const kataGrid = document.querySelector("#kata-grid");
 const search = document.querySelector("#kata-search");
 const kataCount = document.querySelector("#kata-count");
@@ -209,7 +234,13 @@ function openKata(name) {
         <li>Respeitar o ritmo, a respiração e os níveis de força próprios do kata.</li>
       </ul>
       <h3>03 — Sequência movimento por movimento</h3>
-      <p class="pending-note">A contagem total é apresentada como referência. A listagem individual de cada kyodo — técnica, lado, base e direção — ainda precisa ser confrontada com o volume oficial JKA correspondente. Não publicaremos uma sequência reconstruída por suposição.</p>
+      ${kataSequences[name] ? (
+              '<p>Sequência de referência com as técnicas e bases por kyodo. Os movimentos de Kiai estão assinalados.</p>' +
+              '<ol class="sequence-list">' + kataSequences[name].map((step, index) =>
+                '<li><b>' + String(index + 1).padStart(2, "0") + '.</b> ' + step[0] + ' <span>— ' + step[1] + '</span></li>'
+              ).join("") + '</ol>' +
+              '<p class="pending-note">Esta transcrição foi cruzada com referências públicas de estudo Shotokan e com a contagem de 21 movimentos do manual técnico JKA. O mapeamento exato de cada giro, lado e direção, assim como o desenho do embusen, permanece em conferência visual com a demonstração JKA. Confirme a execução com seu sensei.</p>'
+            ) : '<p class="pending-note">A contagem total é apresentada como referência. A listagem individual de cada kyodo — técnica, lado, base e direção — ainda precisa ser confrontada com o volume oficial JKA correspondente. Não publicaremos uma sequência reconstruída por suposição.</p>'}
       <h3>04 — Kiai</h3>
       <p>Os pontos indicados seguem a tabela de referência publicada pela JKA Espanha. A contagem pode variar conforme a convenção de cada edição e associação; confirme com o sensei e com o material adotado no dojo.</p>
       <h3>05 — Embusen</h3>
