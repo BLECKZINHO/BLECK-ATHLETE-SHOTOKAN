@@ -99,3 +99,27 @@ html body #kata-dialog .kata-dialog-box{
   html body #kata-dialog.kata-overlay{padding:10px !important;}
   html body #kata-dialog .kata-dialog-box{max-height:calc(100vh - 20px) !important;}
 }
+
+
+/* Vídeo incorporado nas fichas de kata */
+.kata-video{
+  position:relative;
+  width:100%;
+  aspect-ratio:16 / 9;
+  margin:14px 0 10px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:#000;
+}
+.kata-video iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+.video-caption{
+  color:#999!important;
+  font-size:10px!important;
+  line-height:1.7!important;
+}
