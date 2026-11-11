@@ -3,7 +3,7 @@ const kataNames = ["Heian Shodan","Heian Nidan","Heian Sandan","Heian Yondan","H
 const kataProfiles = {
   "Heian Shodan": { moves: 21, kiai: "9º e 17º", feature: "Primeiro kata Heian: fundamentos de defesa, deslocamento em linhas definidas e coordenação entre bloqueios e contra-ataques.", focus: "Zenkutsu-dachi, Gedan-barai, Oi-zuki, mudanças de direção e estabilidade nas transições.", practice: "Isole as sequências de Gedan-barai e Oi-zuki; confira o comprimento das bases e a rotação do quadril." },
   "Heian Nidan": { moves: 26, kiai: "11º e 26º", feature: "Segundo kata da série Heian. Amplia o trabalho de kokutsu-dachi e introduz combinações simultâneas de defesa e ataque, uraken, yoko-geri-keage, mae-geri e nukite.", focus: "Estabilidade em kokutsu-dachi, coordenação entre uraken e yoko-geri-keage, controle dos chutes, transição para zenkutsu-dachi e uso do quadril em gyaku-hanmi.", practice: "Isole a combinação do 7º kyodo, pratique as sequências de shuto-uke em kokutsu-dachi e trabalhe as transições entre uchi-uke, mae-geri e gyaku-zuki com equilíbrio." },
-  "Heian Sandan": { moves: 20, kiai: "10º e 20º", feature: "Terceiro kata Heian: exige atenção às transições, às técnicas de braço e à estabilidade das bases.", focus: "Kiba-dachi, deslocamentos laterais, coordenação dos braços e manutenção do centro de gravidade.", practice: "Pratique os deslocamentos laterais em Kiba-dachi mantendo a altura constante e os joelhos alinhados." },
+  "Heian Sandan": { moves: 20, kiai: "10º e 20º", feature: "Terceiro kata da série Heian e o mais curto dos cinco. Introduz o trabalho característico em Kiba-dachi, ações simultâneas de defesa, técnicas de mão aberta, golpes de martelo, cotovelos e dorso do punho.", focus: "Estabilidade em Kokutsu-dachi e Kiba-dachi, coordenação simultânea de Uchi-uke e Gedan-barai, controle do giro, deslocamento dos pés e conexão entre Fumikomi e Empi.", practice: "Treine separadamente os bloqueios simultâneos, o giro para Kiba-dachi e a sequência de Fumikomi com Empi e Uraken, mantendo a altura da base." },
   "Heian Yondan": { moves: 27, kiai: "13º e 25º", feature: "Quarto kata Heian: reúne combinações variadas, mudanças de nível e técnicas que exigem coordenação.", focus: "Ritmo, equilíbrio nas técnicas de perna, transições entre bases e precisão das defesas.", practice: "Separe as combinações com chutes e pratique a recuperação da perna antes de avançar para o trecho seguinte." },
   "Heian Godan": { moves: 23, kiai: "12º e 19º", feature: "Quinto kata Heian: combina mudanças de direção, técnicas variadas e transições que pedem controle corporal.", focus: "Mudanças de altura, equilíbrio, coordenação e aterrissagem controlada nas ações com salto.", practice: "Treine primeiro as mudanças de direção e o salto em baixa velocidade, priorizando equilíbrio e finalização estável." },
   "Tekki Shodan": { moves: 29, kiai: "15º e 29º", feature: "Primeiro kata Tekki, originalmente associado à série Naihanchi, com deslocamento predominantemente lateral.", focus: "Kiba-dachi, pressão das pernas para dentro, quadril estável e deslocamentos curtos sem oscilar o tronco.", practice: "Pratique a sequência lateral em Kiba-dachi sem elevar o centro de gravidade nem cruzar os pés fora da técnica." },
@@ -93,6 +93,28 @@ const kataSequences = {
     ["Jodan-age-uke", "Zenkutsu-dachi"],
     ["Gedan-barai", "Zenkutsu-dachi"],
     ["Jodan-age-uke · KIAI", "Zenkutsu-dachi"]
+  ],
+  "Heian Sandan": [
+    ["Chudan-uchi-uke", "Kokutsu-dachi"],
+    ["Chudan-uchi-uke + Gedan-barai", "Heisoku-dachi"],
+    ["Chudan-uchi-uke + Gedan-barai", "Heisoku-dachi"],
+    ["Chudan-uchi-uke", "Kokutsu-dachi"],
+    ["Chudan-uchi-uke + Gedan-barai", "Heisoku-dachi"],
+    ["Chudan-uchi-uke + Gedan-barai", "Heisoku-dachi"],
+    ["Morote-uke", "Kokutsu-dachi"],
+    ["Yonbon-nukite + Osae-uke", "Zenkutsu-dachi"],
+    ["Kentsui-uchi-mawashi-uchi", "Kiba-dachi"],
+    ["Oi-zuki · KIAI", "Zenkutsu-dachi"],
+    ["Ryoken-ryokoshi-kamae (preparação lenta)", "Heisoku-dachi"],
+    ["Fumikomi + Furi-empi", "Kiba-dachi"],
+    ["Uraken-tate-mawashi-uchi", "Kiba-dachi"],
+    ["Fumikomi + Furi-empi", "Kiba-dachi"],
+    ["Uraken-tate-mawashi-uchi", "Kiba-dachi"],
+    ["Fumikomi + Furi-empi (Gyaku-hanmi)", "Kiba-dachi"],
+    ["Uraken-tate-mawashi-uchi", "Kiba-dachi"],
+    ["Tsukami-uke + Oi-zuki", "Zenkutsu-dachi"],
+    ["Koho-tsukiage + Ushiro-empi-uchi", "Kiba-dachi"],
+    ["Koho-tsukiage + Ushiro-empi-uchi · KIAI", "Kiba-dachi"]
   ]
 };
 const kataGrid = document.querySelector("#kata-grid");
@@ -267,7 +289,7 @@ function openKata(name) {
               '<ol class="sequence-list">' + kataSequences[name].map((step, index) =>
                 '<li><b>' + String(index + 1).padStart(2, "0") + '.</b> ' + step[0] + ' <span>— ' + step[1] + '</span></li>'
               ).join("") + '</ol>' +
-              '<p class="pending-note">Esta transcrição foi cruzada com referências técnicas de estudo Shotokan e com a contagem correspondente do manual técnico JKA. No Heian Nidan, a convenção de 26 kyodos agrupa as duas partes da combinação do 7º movimento. O mapeamento exato de cada giro, lado e direção, assim como o desenho do embusen, permanece em conferência visual com a demonstração JKA. Confirme a execução com seu sensei.</p>'
+              '<p class="pending-note">Esta sequência de referência foi cruzada com materiais públicos de estudo Shotokan e com as contagens do manual técnico JKA. Para o Heian Nidan, a convenção de 26 kyodos agrupa a combinação do 7º movimento. Para o Heian Sandan, a tabela técnica consultada apresenta 20 kyodos; há variações de nomenclatura e agrupamento entre referências, por isso mantivemos os nomes mais recorrentes e não atribuímos lado ou direção quando não há confirmação suficiente. O mapeamento exato dos giros e o desenho do embusen devem ser conferidos com a demonstração JKA e o sensei.</p>'
             ) : '<p class="pending-note">A contagem total é apresentada como referência. A listagem individual de cada kyodo — técnica, lado, base e direção — ainda precisa ser confrontada com o volume oficial JKA correspondente. Não publicaremos uma sequência reconstruída por suposição.</p>'}
       <h3>04 — Kiai</h3>
       <p>Os pontos indicados seguem a tabela de referência publicada pela JKA Espanha. A contagem pode variar conforme a convenção de cada edição e associação; confirme com o sensei e com o material adotado no dojo.</p>
@@ -287,7 +309,7 @@ function openKata(name) {
         Japan Karate Association — <a href="https://www.jka.or.jp/wp/wp-content/uploads/2017/04/tech_manual_instructor.pdf" target="_blank" rel="noopener">Technical Manual for the Instructor</a>, especialmente a seção “Elements to Consider & Movements of KATA”.<br>
         JKA — <a href="https://www.jka.or.jp/en/books-and-videos/" target="_blank" rel="noopener">Karate-Do Kata, volumes 1–4</a>, referência oficial para a sequência e os diagramas.<br>
         JKA Espanha — <a href="https://jkaspain.com/kata/" target="_blank" rel="noopener">Katas JKA: contagens e Kiai</a>, referência complementar para a tabela de movimentos e Kiai.<br>
-        Heian Nidan — <a href="https://www.francejka.com/les-kata.html" target="_blank" rel="noopener">France JKA: Les kata</a>, confirmação de 26 movimentos e Kiai nos movimentos 11 e 26; <a href="https://www.techniquesdekarate.com/les-katas/heian-nidan" target="_blank" rel="noopener">Bertrand Jaillet — Heian Nidan</a>, referência técnica complementar para a sequência e a nomenclatura das técnicas.
+        Heian Nidan — <a href="https://www.francejka.com/les-kata.html" target="_blank" rel="noopener">France JKA: Les kata</a>, confirmação de 26 movimentos e Kiai nos movimentos 11 e 26; <a href="https://www.techniquesdekarate.com/les-katas/heian-nidan" target="_blank" rel="noopener">Bertrand Jaillet — Heian Nidan</a>, referência técnica complementar para a sequência e a nomenclatura das técnicas.<br>Heian Sandan — <a href="https://www.francejka.com/les-kata.html" target="_blank" rel="noopener">France JKA: Les kata</a>, confirmação de 20 movimentos e Kiai nos movimentos 10 e 20; <a href="https://projetoshotokankarate.wordpress.com/heian-sandan/" target="_blank" rel="noopener">Projeto Shotokan Karatê-Do — Heian Sandan</a>, referência complementar para técnicas e bases; <a href="https://www.kenseikancanada.org/uploads/8/2/8/3/82833080/heian_sandan.pdf" target="_blank" rel="noopener">Kenseikan Canada — Heian Sandan</a>, conferência complementar da sequência e nomenclatura.
       </div>
       <p class="technical-note">Material de apoio ao estudo. A referência principal é a JKA; confirme a execução, a contagem e eventuais orientações específicas com o sensei e com a edição de kata utilizada pela sua associação.</p>
     `;
