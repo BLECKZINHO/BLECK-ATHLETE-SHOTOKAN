@@ -7,6 +7,8 @@ document.body.insertAdjacentHTML("beforeend", '<div id="kata-dialog" class="kata
 
 const kataDialog = document.querySelector("#kata-dialog");
 function closeKata() {
+  // Limpa o conteúdo incorporado para interromper a reprodução do vídeo ao fechar a ficha.
+  document.querySelector("#kata-dialog-content").innerHTML = "";
   kataDialog.hidden = true;
   document.body.classList.remove("kata-modal-open");
 }
