@@ -68,8 +68,17 @@ function openKata(name) {
       <h2>EMPI<span>.</span></h2>
       <p class="kata-subtitle">燕飛 · O voo da andorinha</p>
       <h3>ASSISTA AO KATA</h3>
-      <p>Consulte os materiais oficiais de aprendizagem e os livros de kata da JKA. A ficha não incorpora um vídeo de origem não verificada.</p>
-      <p class="kata-source"><a href="https://www.jka.or.jp/en/jka-learning-material/" target="_blank" rel="noopener">Abrir materiais oficiais JKA</a> · <a href="https://www.jka.or.jp/en/books-and-videos/" target="_blank" rel="noopener">Livros e vídeos oficiais de kata</a></p>
+      <div class="kata-video">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/_D_SDby1yWU"
+          title="Empi — demonstração completa hospedada por Karate Art"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <p class="video-caption">Vídeo demonstrativo hospedado por Karate Art, uma fonte independente. Não é uma publicação oficial da JKA; use-o como apoio visual e confira a execução com seu sensei.</p>
+      <p class="kata-source"><a href="https://www.jka.or.jp/en/jka-learning-material/" target="_blank" rel="noopener">Materiais oficiais de aprendizagem JKA</a> · <a href="https://www.jka.or.jp/en/books-and-videos/" target="_blank" rel="noopener">Livros e vídeos oficiais de kata</a></p>
       <div class="kata-facts">
         <div><small>CONTAGEM NO MANUAL TÉCNICO JKA</small><strong>37 movimentos</strong></div>
         <div><small>CARACTERÍSTICA CENTRAL</small><strong>Leveza e agilidade</strong></div>
@@ -98,7 +107,7 @@ function openKata(name) {
       <p class="pending-note">O desenho será publicado depois da conferência da trajetória completa dos 37 movimentos e do retorno ao ponto inicial.</p>
       <h3>06 — Bunkai</h3>
       <p>As aplicações serão descritas após a validação da sequência, para que cada interpretação esteja ligada a uma técnica realmente presente no kata.</p>
-      <h3>04 — Roteiro de treino</h3>
+      <h3>07 — Roteiro de treino</h3>
       <ol>
         <li>Assista ao kata completo seguindo a referência indicada pelo seu instrutor.</li>
         <li>Divida a sequência em pequenos trechos e pratique lentamente.</li>
@@ -106,7 +115,7 @@ function openKata(name) {
         <li>Repita os trechos, depois una-os mantendo ritmo e respiração.</li>
         <li>Finalize conferindo o embusen e o retorno ao ponto inicial com seu sensei.</li>
       </ol>
-      <div class="kata-source"><b>Referência técnica:</b> Japan Karate Association — <a href="https://www.jka.or.jp/wp/wp-content/uploads/2017/04/tech_manual_instructor.pdf" target="_blank" rel="noopener">Technical Manual for the Instructor</a>, seção “Elements to Consider & Movements of KATA”, página 15 do documento. A JKA também apresenta seus livros oficiais de kata na <a href="https://www.jka.or.jp/en/jka-learning-material/" target="_blank" rel="noopener">página de materiais de aprendizagem</a>.</div>
+      <div class="kata-source"><b>Referências técnicas:</b> Japan Karate Association — <a href="https://www.jka.or.jp/wp/wp-content/uploads/2017/04/tech_manual_instructor.pdf" target="_blank" rel="noopener">Technical Manual for the Instructor</a>, seção “Elements to Consider & Movements of KATA”, página 15 do documento; JKA Brasil — <a href="https://jkabrasil.com.br/wp-content/uploads/2023/06/jka-brasil-MANUAL-TECNICO-PARA-O-INSTRUTOR-da-JKA-BRASIL.pdf" target="_blank" rel="noopener">Manual Técnico para o Instrutor</a>, pontos técnicos específicos do Enpi; <a href="https://jkachile.com/kata/" target="_blank" rel="noopener">JKA Chile</a>, referência complementar para Kiai. Consulte também os <a href="https://www.jka.or.jp/en/jka-learning-material/" target="_blank" rel="noopener">materiais oficiais de aprendizagem</a> da JKA.</div>
       <p class="technical-note">Material de apoio ao estudo. A execução e a sequência devem ser conferidas com o sensei e com a edição de referência utilizada pela sua associação.</p>
     `;
   } else if (name === "Jion") {
