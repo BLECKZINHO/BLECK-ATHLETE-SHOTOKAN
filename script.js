@@ -22,7 +22,7 @@ function renderKatas(term = "") {
   const filtered = kataNames.filter(name => name.toLowerCase().includes(term.toLowerCase()));
   kataGrid.innerHTML = filtered.map(name => {
     const index = kataNames.indexOf(name) + 1;
-    const available = name === "Empi";
+    const available = name === "Empi" || name === "Jion";
     return '<button class="kata-item" type="button" data-kata="' + name + '" aria-label="Abrir estudo de ' + name + '"><b>' + name + '</b><span>' + (available ? 'ESTUDO INICIAL DISPONÍVEL' : 'CONTEÚDO EM PREPARAÇÃO') + '</span><i>' + String(index).padStart(2,"0") + ' ↗</i></button>';
   }).join("");
   kataCount.textContent = filtered.length + (filtered.length === 1 ? " KATA" : " KATAS");
