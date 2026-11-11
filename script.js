@@ -2,7 +2,7 @@ const kataNames = ["Heian Shodan","Heian Nidan","Heian Sandan","Heian Yondan","H
 
 const kataProfiles = {
   "Heian Shodan": { moves: 21, kiai: "9º e 17º", feature: "Primeiro kata Heian: fundamentos de defesa, deslocamento em linhas definidas e coordenação entre bloqueios e contra-ataques.", focus: "Zenkutsu-dachi, Gedan-barai, Oi-zuki, mudanças de direção e estabilidade nas transições.", practice: "Isole as sequências de Gedan-barai e Oi-zuki; confira o comprimento das bases e a rotação do quadril." },
-  "Heian Nidan": { moves: 26, kiai: "11º e 26º", feature: "Segundo kata Heian: amplia o repertório com técnicas de nível alto e médio, chutes e mudanças de direção.", focus: "Controle dos níveis Jodan e Chudan, equilíbrio nos chutes e coordenação das combinações.", practice: "Treine os chutes isoladamente, recupere a base com controle e depois conecte as combinações sem acelerar." },
+  "Heian Nidan": { moves: 26, kiai: "11º e 26º", feature: "Segundo kata da série Heian. Amplia o trabalho de kokutsu-dachi e introduz combinações simultâneas de defesa e ataque, uraken, yoko-geri-keage, mae-geri e nukite.", focus: "Estabilidade em kokutsu-dachi, coordenação entre uraken e yoko-geri-keage, controle dos chutes, transição para zenkutsu-dachi e uso do quadril em gyaku-hanmi.", practice: "Isole a combinação do 7º kyodo, pratique os quatro shuto-uke em kokutsu-dachi e trabalhe as transições entre uchi-uke, mae-geri e gyaku-zuki com equilíbrio." },
   "Heian Sandan": { moves: 20, kiai: "10º e 20º", feature: "Terceiro kata Heian: exige atenção às transições, às técnicas de braço e à estabilidade das bases.", focus: "Kiba-dachi, deslocamentos laterais, coordenação dos braços e manutenção do centro de gravidade.", practice: "Pratique os deslocamentos laterais em Kiba-dachi mantendo a altura constante e os joelhos alinhados." },
   "Heian Yondan": { moves: 27, kiai: "13º e 25º", feature: "Quarto kata Heian: reúne combinações variadas, mudanças de nível e técnicas que exigem coordenação.", focus: "Ritmo, equilíbrio nas técnicas de perna, transições entre bases e precisão das defesas.", practice: "Separe as combinações com chutes e pratique a recuperação da perna antes de avançar para o trecho seguinte." },
   "Heian Godan": { moves: 23, kiai: "12º e 19º", feature: "Quinto kata Heian: combina mudanças de direção, técnicas variadas e transições que pedem controle corporal.", focus: "Mudanças de altura, equilíbrio, coordenação e aterrissagem controlada nas ações com salto.", practice: "Treine primeiro as mudanças de direção e o salto em baixa velocidade, priorizando equilíbrio e finalização estável." },
@@ -65,6 +65,34 @@ const kataSequences = {
     ["Shuto-uke", "Kokutsu-dachi"],
     ["Shuto-uke", "Kokutsu-dachi"],
     ["Shuto-uke", "Kokutsu-dachi"]
+  ],
+  "Heian Nidan": [
+    ["Jodan-kamae + Jodan-haiwan-sokumen-uke", "Kokutsu-dachi"],
+    ["Tettsui-uchi-komi + Tekubi-nagashi-uke", "Kokutsu-dachi"],
+    ["Chudan-yoko-zuki (ou Tettsui-uchi)", "Kokutsu-dachi"],
+    ["Jodan-kamae + Jodan-haiwan-sokumen-uke", "Kokutsu-dachi"],
+    ["Tettsui-uchi-komi + Tekubi-nagashi-uke", "Kokutsu-dachi"],
+    ["Chudan-yoko-zuki (ou Tettsui-uchi)", "Kokutsu-dachi"],
+    ["Jodan-uraken-uchi + Yoko-geri-keage", "Ashi-dachi"],
+    ["Chudan-shuto-uke", "Kokutsu-dachi"],
+    ["Chudan-shuto-uke", "Kokutsu-dachi"],
+    ["Chudan-shuto-uke", "Kokutsu-dachi"],
+    ["Osae-uke + Chudan-nukite · KIAI", "Zenkutsu-dachi"],
+    ["Chudan-shuto-uke", "Kokutsu-dachi"],
+    ["Chudan-shuto-uke", "Kokutsu-dachi"],
+    ["Chudan-shuto-uke", "Kokutsu-dachi"],
+    ["Chudan-shuto-uke", "Kokutsu-dachi"],
+    ["Chudan-uchi-uke (Gyaku-hanmi)", "Ashi-zenkutsu"],
+    ["Mae-geri", "Ashi-dachi"],
+    ["Chudan-gyaku-zuki", "Zenkutsu-dachi"],
+    ["Chudan-uchi-uke (Gyaku-hanmi)", "Ashi-zenkutsu"],
+    ["Mae-geri", "Ashi-dachi"],
+    ["Chudan-gyaku-zuki", "Zenkutsu-dachi"],
+    ["Chudan-morote-uke", "Zenkutsu-dachi"],
+    ["Gedan-barai", "Zenkutsu-dachi"],
+    ["Jodan-age-uke", "Zenkutsu-dachi"],
+    ["Gedan-barai", "Zenkutsu-dachi"],
+    ["Jodan-age-uke · KIAI", "Zenkutsu-dachi"]
   ]
 };
 const kataGrid = document.querySelector("#kata-grid");
@@ -239,7 +267,7 @@ function openKata(name) {
               '<ol class="sequence-list">' + kataSequences[name].map((step, index) =>
                 '<li><b>' + String(index + 1).padStart(2, "0") + '.</b> ' + step[0] + ' <span>— ' + step[1] + '</span></li>'
               ).join("") + '</ol>' +
-              '<p class="pending-note">Esta transcrição foi cruzada com referências públicas de estudo Shotokan e com a contagem de 21 movimentos do manual técnico JKA. O mapeamento exato de cada giro, lado e direção, assim como o desenho do embusen, permanece em conferência visual com a demonstração JKA. Confirme a execução com seu sensei.</p>'
+              '<p class="pending-note">Esta transcrição foi cruzada com referências técnicas de estudo Shotokan e com a contagem correspondente do manual técnico JKA. No Heian Nidan, a convenção de 26 kyodos agrupa as duas partes da combinação do 7º movimento. O mapeamento exato de cada giro, lado e direção, assim como o desenho do embusen, permanece em conferência visual com a demonstração JKA. Confirme a execução com seu sensei.</p>'
             ) : '<p class="pending-note">A contagem total é apresentada como referência. A listagem individual de cada kyodo — técnica, lado, base e direção — ainda precisa ser confrontada com o volume oficial JKA correspondente. Não publicaremos uma sequência reconstruída por suposição.</p>'}
       <h3>04 — Kiai</h3>
       <p>Os pontos indicados seguem a tabela de referência publicada pela JKA Espanha. A contagem pode variar conforme a convenção de cada edição e associação; confirme com o sensei e com o material adotado no dojo.</p>
@@ -258,7 +286,8 @@ function openKata(name) {
       <div class="kata-source"><b>Referências técnicas:</b><br>
         Japan Karate Association — <a href="https://www.jka.or.jp/wp/wp-content/uploads/2017/04/tech_manual_instructor.pdf" target="_blank" rel="noopener">Technical Manual for the Instructor</a>, especialmente a seção “Elements to Consider & Movements of KATA”.<br>
         JKA — <a href="https://www.jka.or.jp/en/books-and-videos/" target="_blank" rel="noopener">Karate-Do Kata, volumes 1–4</a>, referência oficial para a sequência e os diagramas.<br>
-        JKA Espanha — <a href="https://jkaspain.com/kata/" target="_blank" rel="noopener">Katas JKA: contagens e Kiai</a>, referência complementar para a tabela de movimentos e Kiai.
+        JKA Espanha — <a href="https://jkaspain.com/kata/" target="_blank" rel="noopener">Katas JKA: contagens e Kiai</a>, referência complementar para a tabela de movimentos e Kiai.<br>
+        Heian Nidan — <a href="https://www.francejka.com/les-kata.html" target="_blank" rel="noopener">France JKA: Les kata</a>, confirmação de 26 movimentos e Kiai nos movimentos 11 e 26; <a href="https://www.techniquesdekarate.com/les-katas/heian-nidan" target="_blank" rel="noopener">Bertrand Jaillet — Heian Nidan</a>, referência técnica complementar para a sequência e a nomenclatura das técnicas.
       </div>
       <p class="technical-note">Material de apoio ao estudo. A referência principal é a JKA; confirme a execução, a contagem e eventuais orientações específicas com o sensei e com a edição de kata utilizada pela sua associação.</p>
     `;
