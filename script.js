@@ -3,9 +3,20 @@ const kataGrid = document.querySelector("#kata-grid");
 const search = document.querySelector("#kata-search");
 const kataCount = document.querySelector("#kata-count");
 
-document.body.insertAdjacentHTML("beforeend", '<dialog id="kata-dialog"><div class="kata-dialog-head"><button type="button" id="kata-dialog-close">FECHAR ✕</button></div><div id="kata-dialog-content"></div></dialog>');
-document.querySelector("#kata-dialog-close").addEventListener("click", () => document.querySelector("#kata-dialog").close());
-document.querySelector("#kata-dialog").addEventListener("click", event => { if (event.target.id === "kata-dialog") event.target.close(); });
+document.body.insertAdjacentHTML("beforeend", '<div id="kata-dialog" class="kata-overlay" hidden><section class="kata-dialog-box" role="dialog" aria-modal="true" aria-label="Ficha de estudo do kata"><div class="kata-dialog-head"><button type="button" id="kata-dialog-close">FECHAR ✕</button></div><div id="kata-dialog-content"></div></section></div>');
+
+const kataDialog = document.querySelector("#kata-dialog");
+function closeKata() {
+  kataDialog.hidden = true;
+  document.body.classList.remove("kata-modal-open");
+}
+document.querySelector("#kata-dialog-close").addEventListener("click", closeKata);
+kataDialog.addEventListener("click", event => {
+  if (event.target === kataDialog) closeKata();
+});
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && !kataDialog.hidden) closeKata();
+});
 
 function renderKatas(term = "") {
   const filtered = kataNames.filter(name => name.toLowerCase().includes(term.toLowerCase()));
@@ -18,7 +29,6 @@ function renderKatas(term = "") {
 }
 
 function openKata(name) {
-  const dialog = document.querySelector("#kata-dialog");
   const content = document.querySelector("#kata-dialog-content");
   if (name === "Empi") {
     content.innerHTML = `
@@ -59,7 +69,9 @@ function openKata(name) {
       <p class="pending-note">Este kata já está no catálogo, mas sua ficha técnica ainda está em preparação. Vamos publicar a contagem, a sequência, os Kiai, o embusen e os pontos de atenção somente depois de conferir as referências técnicas.</p>
     `;
   }
-  dialog.showModal();
+  kataDialog.hidden = false;
+  document.body.classList.add("kata-modal-open");
+  document.querySelector("#kata-dialog-close").focus();
 }
 
 renderKatas();

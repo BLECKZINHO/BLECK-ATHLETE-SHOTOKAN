@@ -24,3 +24,10 @@
 .kata-source{margin-top:24px;padding:17px;background:#19191e;border:1px solid var(--line);font-size:11px;line-height:1.8;color:#bbb}
 .kata-source a{color:#ff6572;text-decoration:underline}
 @media(max-width:560px){.kata-facts{grid-template-columns:1fr}.kata-facts>div+div{border-top:1px solid var(--line);padding-top:12px}}
+
+
+/* Correção de compatibilidade: janela dos katas sem depender do elemento <dialog> */
+.kata-overlay[hidden]{display:none!important}
+.kata-overlay{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:14px;background:#000c;backdrop-filter:blur(5px)}
+.kata-dialog-box{width:min(820px,100%);max-height:88vh;overflow:auto;border:1px solid #4a252b;background:#101014;color:var(--white);box-shadow:0 25px 90px #000b}
+body.kata-modal-open{overflow:hidden}
